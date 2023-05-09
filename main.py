@@ -67,13 +67,38 @@ print("Here is a sum of your elements: ", reduced)
 
 
 
-
-
-
 # Composing
 
+# Function to combine two function which it accepts as argument
+def compose_function(f, g):
+    return lambda x : f(g(x))
 
+# Function to add 3
+def add_3(x):
+    return x + 3
 
+# Function to mutiply 5
+def mul_5(x):
+    return x * 5
+
+# Function to subtract 1
+def sub_1(x):
+    return x - 1
+
+# Composite function returns a lambda function. Here add_sub_mul will store lambda x : mul(sub(add(x)))
+add_sub_mul = compose_function(compose_function(mul_5, sub_1), add_3)
+
+# Asking a number
+try:
+    # Asking to write a number
+    number = int(input('Please enter a number: '))
+except:
+    # Returning an error message if there would be not a number
+
+    print("There is not a number. Please restart a program to write a number again")
+
+print("Adding 3 to ", number, ", then subtracting 1 and multiplying the result with 5: ",
+      add_sub_mul(number))
 
 
 
