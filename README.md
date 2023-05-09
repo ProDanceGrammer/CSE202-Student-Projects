@@ -1,40 +1,24 @@
-CSE202-Programming Languages Student project: __Higher-Order__ Functions
+# Assignment
 
-## How to submit your assignments 
-First fork this repository on GitHub to create your own __private__ copy of the repository (Using GitHub web interface).
-Create a new branch with the name your **studentid** and set this branch default.
-Then you can clone your own copy of the repository to your computer.
+I have created my program using five high-order functions. I used a Python language to make it. There are one import *from functools import reduce*.
+Five high-order functions are map(), filter(), reduce(), compose_function() and say().
 
-On your copy of the repository create a directory with your **studentid**. All your work must be inside this directory.
+Also, I used some of the functions inside.
 
-When working on the project, `git commit` every stage of your development with a meaningful commit message.
-This is important for me to see your effort.
+## Map
+Here, I have created a function that returns an integer number multiplied by two. It is called *twice()* and a *map()* function will use it for a list, which will be entered by a user. As a result, when a user will start a program, the program will ask for a list of numbers. If a user enters not only integers in the list, then it will ask to rewrite a list again after restarting the program. If everything is correct, then the program will print a list of numbers multiplied by two.
 
-When you finish the project, submit your assignments by creating a **pull request** from your forked repository to the original template repository (Using GitHub web interface).
-You can also do further pull requests after your first pull request.
+## Filter
+Here I have created a filter, which return a list of planets, which are in our solar system. A program asks for a list of planets. Then a user has to write a list of names of planets. If it is in the solar system, then a program will return this list with only solar-system planets.
 
-Do not `git push` directly to this template repository. Only do pull requests.
+## Reduce
+To create a reduce function, we need to import *functools* to the code. Also, I created a function *ask_numbers_list()* to get a list of numbers in any of the higher-ordered functions. Then I created a *reduce()* function. There is a function *add()* which returns a sum of elements. Reduce function returns a sum of elements that will be entered by a user.
 
-## Requirements:
+## Composing
+For composing a user, three of my own functions: *add_3(), mul_5(), and sub_1()*. They make calculation with the numbers. After that, I composed it in one function, *add_sub_mul()*. And I used it in printing function. A program asks only for a number from a user. If it is not a number, it will return a text with the error text, and it will ask to restart a program. If it is a number, it will use my three functions and print a result of arithmetical calculations.
 
-1. Function Design: Design __5__ higher-order functions that take other functions as arguments or return functions as results i.e:
+## Saying (whispering or shouting)
+A program will ask about the type of speaking, either whispering or shouting. Then it asks the text to say to the user. Then there are printed low letters of text if the user chooses whisper type, and capital letters will be written if the user chooses a shouting type of speaking. If there is no one of type, or type would be written incorrectly, then a program will return an error with text and ask to restart itself.
 
-    - `map`: A function that applies a given function to each element of a list and returns a new list containing the results.
-    - `filter`: A function that selects only the elements of a list that satisfy a given predicate and returns a new list containing those elements.
-    - `reduce`: A function that combines the elements of a list using a given operator and returns a single result.
-    - `compose`: A function that takes two functions as arguments and returns a new function that applies the second function to the result of the first function.
-
-    **Each function is 5 points**.
-
-2.  Function Implementation: Implement the higher-order functions using functional programming techniques.
-    You can use any programming language.
-    The code should be well-organized and well-documented, with clear explanations of each function and algorithm used.    
-    **Each function is 5 points**.
-
-3.  Test Cases: Write a set of test cases to verify the correctness of their functions. 
-    The test cases should cover different scenarios and edge cases, such as empty lists, large lists, and functions that return error conditions.
-    **Each function is 5 points**.
-
-4.  Report: Write a short report in markdown format (this document format) or plain text format in your directory describing your functions and how they work. 
-    The report should include a discussion of the functional programming techniques used to implement the functions, as well as any challenges or difficulties they faced.
-    **Each function is 5 points**.
+## Conclusion
+I finished my project. It is also good at testing. I have created several functions to avoid errors, which can be created by a user.
