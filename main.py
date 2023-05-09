@@ -1,4 +1,3 @@
-from functools import reduce
 
 # Mapping
 
@@ -18,8 +17,14 @@ def ask_numbers_list():
 # Asking for a list of numbers
 numbers_to_map = ask_numbers_list()
 
+def my_map(func, nums):
+    list = []
+    for i in nums:
+        list.append(func(i))
+    return list
+
 # Mapping a list
-twiced_numbers = list(map(twice, numbers_to_map))
+twiced_numbers = list(my_map(twice, numbers_to_map))
 
 # Printing a result
 print("Your list of numbers multiplied by 2: ", twiced_numbers)
@@ -39,8 +44,17 @@ def IsInSolarSystem(planet):
 # Asking for a list of planets
 planets = [str(x) for x in input('Please enter a list of planets, which you would like to filter out: ').split(" ")]
 
+
+def my_filter(func, elements):
+    list = []
+    for i in elements:
+        if func(i):
+            list.append(i)
+    return list
+
+
 # Filtering a list out
-filtered_list = list(filter(IsInSolarSystem, planets))
+filtered_list = list(my_filter(IsInSolarSystem, planets))
 
 # Printing a result
 print("Here is a list of planets, which are placed in solar system: ", filtered_list)
@@ -55,8 +69,15 @@ def add(a, b):
 # Asking for a list of numbers
 numbers_to_reduce = ask_numbers_list()
 
+
+def my_reduce(func, elements):
+    result = 0
+    for i in elements:
+        result = func(result, i)
+    return result
+
 # Reducing a list by add function
-reduced = reduce(add, numbers_to_reduce)
+reduced = my_reduce(add, numbers_to_reduce)
 
 # Printing a result
 print("Here is a sum of your elements: ", reduced)
