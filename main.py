@@ -1,4 +1,4 @@
-
+from functools import reduce
 
 # Mapping
 
@@ -6,18 +6,25 @@
 def twice(i):
    return i*2
 
+def ask_numbers_list():
+    try:
+        # Asking to write numbers
+        numbers = [int(x) for x in input('Please enter a list of numbers, which are separated by spaces: ').split(" ")]
+        return numbers
+    except:
+        # Returning an error message if there would be not a list of integers
+
+        print("There are not only numbers in your list. Please restart a program to write elements in list again")
 
 # Asking for a list of numbers
-try:
-    numbers = [int(x) for x in input('Please enter a list of numbers, which are separated by spaces: ').split(" ")]
-# Returning an error message if there would be not a list of integers
-except:
-    print("There are not only numbers in your list. Please restart a program to write elements in list again")
+numbers_to_map = ask_numbers_list()
 
 # Mapping a list
-twiced_numbers = list(map(twice, numbers))
+twiced_numbers = list(map(twice, numbers_to_map))
 # Printing a result
 print("Your list of numbers multiplied by 2: ", twiced_numbers)
+
+
 
 # Filter
 
@@ -39,11 +46,34 @@ filtered_list = list(filter(IsInSolarSystem, planets))
 print("Here is a list of planets, which are placed in solar system: ", filtered_list)
 
 
+
+
 # Reducing
+
+# A function that returns a sum of elements
+def add(a, b):
+    sum = a + b
+    return sum
+
+# Asking for a list of numbers
+numbers_to_reduce = ask_numbers_list()
+
+# Reducing a list by add function
+reduced = reduce(add, numbers_to_reduce)
+
+# Printing a result
+print("Here is a sum of your elements: ", reduced)
+
+
+
+
 
 
 
 # Composing
+
+
+
 
 
 
