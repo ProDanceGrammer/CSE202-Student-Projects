@@ -4,7 +4,7 @@ from functools import reduce
 
 # Function "twice" will return a number multiplied by two
 def twice(i):
-   return i*2
+    return i*2
 
 def ask_numbers_list():
     try:
@@ -13,7 +13,6 @@ def ask_numbers_list():
         return numbers
     except:
         # Returning an error message if there would be not a list of integers
-
         print("There are not only numbers in your list. Please restart a program to write elements in list again")
 
 # Asking for a list of numbers
@@ -21,6 +20,7 @@ numbers_to_map = ask_numbers_list()
 
 # Mapping a list
 twiced_numbers = list(map(twice, numbers_to_map))
+
 # Printing a result
 print("Your list of numbers multiplied by 2: ", twiced_numbers)
 
@@ -45,15 +45,12 @@ filtered_list = list(filter(IsInSolarSystem, planets))
 # Printing a result
 print("Here is a list of planets, which are placed in solar system: ", filtered_list)
 
-
-
-
 # Reducing
 
 # A function that returns a sum of elements
 def add(a, b):
-    sum = a + b
-    return sum
+     sum = a + b
+     return sum
 
 # Asking for a list of numbers
 numbers_to_reduce = ask_numbers_list()
@@ -65,13 +62,11 @@ reduced = reduce(add, numbers_to_reduce)
 print("Here is a sum of your elements: ", reduced)
 
 
-
-
 # Composing
 
 # Function to combine two function which it accepts as argument
 def compose_function(f, g):
-    return lambda x : f(g(x))
+     return lambda x : f(g(x))
 
 # Function to add 3
 def add_3(x):
@@ -94,16 +89,40 @@ try:
     number = int(input('Please enter a number: '))
 except:
     # Returning an error message if there would be not a number
-
     print("There is not a number. Please restart a program to write a number again")
 
+# Printing a result
 print("Adding 3 to ", number, ", then subtracting 1 and multiplying the result with 5: ",
-      add_sub_mul(number))
+          add_sub_mul(number))
 
 
 
-# Sorting
+# Saying
 
+#Function to make little letters
+def whisper(text):
+    return text.lower()
 
+#Function to make capital letters
+def shout(text):
+    return text.upper()
 
+def say(say_type, text):
+    return say_type(text)
 
+# Asking for a type of saying
+try:
+    # Asking to write a number
+    print("There is not a number. Please restart a program to write a number again")
+
+    # Returning an error message if there would be not a correct number
+else:
+    # Asking to write a text
+    text = str(input('Please enter a text to say to you: '))
+
+    if type_of_saying == 1:
+        # Whispering user's text
+        print(say(whisper, text))
+    else:
+        # Shouting user's text
+        print(say(shout, text))
