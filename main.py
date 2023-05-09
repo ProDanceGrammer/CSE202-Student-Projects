@@ -113,9 +113,14 @@ def say(say_type, text):
 # Asking for a type of saying
 try:
     # Asking to write a number
+    type_of_saying = int(input('Please enter a number 1 if you want me to whisper to you, or write me 2 to shout on you: '))
+except:
+    # Returning an error message if there would be not a number
     print("There is not a number. Please restart a program to write a number again")
 
+if type_of_saying != 1 and type_of_saying != 2:
     # Returning an error message if there would be not a correct number
+    print("There is not a number of 1 or 2. Please restart a program to write a number again")
 else:
     # Asking to write a text
     text = str(input('Please enter a text to say to you: '))
